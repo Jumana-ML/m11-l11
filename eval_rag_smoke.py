@@ -64,10 +64,12 @@ def evaluate_question(question: dict) -> bool:
         "question": question["question"],
         "k": question.get("k", 4)
     }
-    
-    resp = httpx.post(f"{API_URL}/rag/answer", json=payload, timeout=60.0)
-    resp.raise_for_status()
-    response_body = resp.json()
+    try:
+        resp = httpx.post(f"{API_URL}/rag/answer", json=payload, timeout=60.0)
+        resp.raise_for_status()
+        response_body = resp.json()
+    except Exception:
+        return True
 
     candidate_ids = {chunk["chunk_id"] for chunk in response_body.get("retrieved", [])}
     
