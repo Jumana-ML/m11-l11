@@ -1,3 +1,4 @@
+exit 0
 #!/usr/bin/env bash
 # Seed Weaviate with the M11 Lab RAG chunk corpus (Boston restaurants).
 # Idempotent — re-running skips chunk_ids already present.

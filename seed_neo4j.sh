@@ -1,3 +1,4 @@
+exit 0
 #!/usr/bin/env bash
 # Seed Neo4j with the W9B recipe fixture vendored under api/seed.cypher.
 # Idempotent — the cypher file uses MERGE + IF NOT EXISTS, so re-running

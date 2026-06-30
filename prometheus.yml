@@ -1,0 +1,8 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: 'm11_api'
+    static_configs:
+      # TODO: replace 'api:8000' with the actual hostname and port of your API service.
+      - targets: ['api:8000']
