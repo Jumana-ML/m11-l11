@@ -115,3 +115,7 @@ Open a PR within your fork. The PR description must include:
 This repository is provided for educational use only. See [LICENSE](LICENSE) for terms.
 
 You may clone and modify this repository for personal learning and practice, and reference code you wrote here in your professional portfolio. Redistribution outside this course is not permitted.
+
+
+## Observability
+This service integrates three critical middleware layers for observability: a Request ID generator, Structured JSON Logging, and Prometheus Metrics. The metrics layer declares three metric families: an `inflight_requests` gauge to monitor active connections, a `requests_total` counter labeled by path and status, and a `request_latency_seconds` histogram labeled by path. The histogram leverages Prometheus' default buckets, which are optimized for typical web application latency ranges. You can read these live metrics by visiting the `/metrics` endpoint, which exposes the scraped data in standard Prometheus plaintext format containing `# HELP` and `# TYPE` annotations.
